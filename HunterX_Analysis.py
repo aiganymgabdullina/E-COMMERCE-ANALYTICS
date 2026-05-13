@@ -46,6 +46,7 @@ def data_audit(file_path):
 
     # 4. Уникальные значения категорий (через цикл for)
     print("\n[INFO] Категориальный анализ:")
+    cat_columns = df.select_dtypes(include=['object', 'string']).columns
     cat_columns = df.select_dtypes(include=['object']).columns
     for col in cat_columns:
         print(f"Колонка '{col}': {df[col].nunique()} уникальных значений")
@@ -88,6 +89,7 @@ def clean_data_pipeline(df):
 
     # 3. Обработка строковых полей (Некорректные символы и пробелы)
     # Убираем лишние пробелы по краям во всех строковых колонках
+    str_cols = df.select_dtypes(include=['object', 'string']).columns
     str_cols = df.select_dtypes(include=['object']).columns
     for col in str_cols:
         df[col] = df[col].astype(str).str.strip().str.title()

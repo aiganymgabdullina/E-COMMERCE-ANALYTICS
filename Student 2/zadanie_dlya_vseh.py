@@ -3,7 +3,7 @@ import numpy as np
 import time
 # Читаем реальный файл 1 Студента
 
-FILE_PATH = "../products_advanced_dataset.csv"
+FILE_PATH = "../Student 1/products_advanced_dataset.csv"
 try:
     df_raw = pd.read_csv(FILE_PATH)
 except FileNotFoundError:

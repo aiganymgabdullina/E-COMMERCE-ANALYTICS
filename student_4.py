@@ -96,7 +96,7 @@ for segment, value in top_segments:
 #быть таблица или список этих комбинаций и текстовый анализ, объясняющий, какие комбинации наиболее распространены.
 import pandas as pd
 
-file_name = 'catalog_products.xlsx - Sheet1.csv'
+file_name = 'products_advanced_dataset.csv'
 raw_df = pd.read_csv(file_name)
 
 parsed_data = []
@@ -150,7 +150,7 @@ print(counts.head(10))
 import pandas as pd
 import numpy as np
 
-file_name = 'catalog_products.xlsx - Sheet1.csv'
+file_name = 'products_advanced_dataset.csv'
 raw_df = pd.read_csv(file_name)
 
 parsed_data = []
@@ -217,7 +217,7 @@ print(f"Показатели лидера -> Продажи: {best_sales:.0f} ш
 import pandas as pd
 import numpy as np
 
-file_name = 'catalog_products.xlsx - Sheet1.csv'
+file_name = 'products_advanced_dataset.csv'
 raw_df = pd.read_csv(file_name)
 
 parsed_data = []
@@ -360,7 +360,7 @@ class MarketplaceAnalyticsPipeline:
         plt.tight_layout()
         plt.show()
 
-pipeline = MarketplaceAnalyticsPipeline('catalog_products.xlsx - Sheet1.csv')
+pipeline = MarketplaceAnalyticsPipeline('products_advanced_dataset.csv')
 pipeline.load_and_clean_data().calculate_metrics().run_full_report()
 
 stream = pipeline.data_stream_generator(chunk_size=3)
